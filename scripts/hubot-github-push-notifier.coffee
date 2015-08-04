@@ -23,8 +23,8 @@ module.exports = (robot) ->
 
 					# TODO: Should figure out how to do multilined strings (kept adding weird tabs)
 					message = "#{commit.committer.name} (#{commit.committer.username}) pushed to #{payload.repository.full_name} - branch #{(payload.ref.split "/")[2]} with message: \"#{commit.message}\".\n(#{commit.url})"
-					robot.send room: "#general", "#{message}"
+					robot.send room: "#github_notifications", "#{message}"
 				else
-					robot.send room: "#general", "ERROR: Github Webhook is formatted incorrectly"
+					robot.send room: "#github_notifications", "ERROR: Github Webhook is formatted incorrectly"
 			else
-				robot.send room: "#general", "NOTICE: Github Webhook test is successful!"
+				robot.send room: "#github_notifications", "NOTICE: Github Webhook test is successful!"
