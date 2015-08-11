@@ -13,7 +13,8 @@
 #	hubot remove restaurant <restaurant> - Remove a restaurant from the list of cool places
 # 	hubot add restaurant <restaurant> - Add a restaurant to the list of hip places
 #
-# Author: Leon Pham
+# Author: 
+# 	Leon Pham
 
 restaurants = [
 	"Wildfire",
