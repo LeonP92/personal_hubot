@@ -55,7 +55,6 @@ module.exports = (robot) ->
 		msg.send "Here are the restaurants: \n#{restaurantString}"
 
 	robot.respond /remove restaurant (.*)/i, (msg) ->
-		# TODO: This is hackish. Should find a way to unencode URLs.
 		restaurant = msg.match[1]
 
 		indexOfRestaurant = restaurants.indexOf(restaurant)
@@ -69,7 +68,6 @@ module.exports = (robot) ->
 		
 
 	robot.respond /add restaurant (.*)/i, (msg) ->
-		# TODO: This is hackish. Should find a way to unencode URLs.
 		restaurant = msg.match[1]
 		tempArray = restaurant.split(" ")
 		console.log(tempArray)
