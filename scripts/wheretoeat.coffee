@@ -56,7 +56,7 @@ module.exports = (robot) ->
 
 	robot.respond /remove restaurant (.*)/i, (msg) ->
 		# TODO: This is hackish. Should find a way to unencode URLs.
-		restaurant = escape(msg.match[1]).replace(/%20/g, " ").replace(/%27/g, "'")
+		restaurant = msg.match[1]
 
 		indexOfRestaurant = restaurants.indexOf(restaurant)
 
@@ -70,9 +70,9 @@ module.exports = (robot) ->
 
 	robot.respond /add restaurant (.*)/i, (msg) ->
 		# TODO: This is hackish. Should find a way to unencode URLs.
-		restaurant = escape(msg.match[1]).replace(/%20/g, " ").replace(/%24/g, "$").replace(/%27/g, "'")
+		restaurant = msg.match[1]
 		tempArray = restaurant.split(" ")
-
+		console.log(tempArray)
 		if (tempArray.length != 2)
 			msg.send "HEY! you gave me #{tempArray.length} argument! I need two! Learn to read!"
 			return
