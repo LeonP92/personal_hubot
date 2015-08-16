@@ -70,13 +70,14 @@ module.exports = (robot) ->
 	robot.respond /add restaurant (.*)/i, (msg) ->
 		restaurant = msg.match[1]
 		tempArray = restaurant.split(" ")
-		console.log(tempArray)
-		if (tempArray.length != 2)
+		
+		if (tempArray.length < 2)
 			msg.send "HEY! you gave me #{tempArray.length} argument! I need two! Learn to read!"
 			return
 
-		restaurantName = tempArray[0]
-		restaurantPrice = tempArray[1]
+
+		restaurantPrice = tempArray.pop()
+		restaurantName = tempArray.toString().replace(/,/g, " ")
 
 		if (restaurantPrice.match(/\${1,5}/g))
 			if (restaurantName.match(/QDOBA/ig))
