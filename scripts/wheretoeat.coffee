@@ -60,7 +60,7 @@ module.exports = (robot) ->
 		indexOfRestaurant = restaurants.indexOf(restaurant)
 
 		if (indexOfRestaurant != -1) 
-			restaurants.splice(/indexOfRestaurant/i, 1)
+			restaurants.splice(indexOfRestaurant, 1)
 			delete priceOfRestaurants[restaurant]
 			msg.send "#{restaurant} has been removed!"
 		else 
